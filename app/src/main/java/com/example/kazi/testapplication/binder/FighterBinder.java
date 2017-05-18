@@ -18,9 +18,7 @@ import com.squareup.picasso.Picasso;
 
 
 import java.util.ArrayList;
-
 import java.util.List;
-import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;

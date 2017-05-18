@@ -21,5 +21,4 @@ public interface ApiPresenter {
 
     void getFighters(Callback callback);
 
-    //void getFighters(Observer observer);
 }

@@ -12,11 +12,10 @@ import android.widget.TextView;
 
 import com.example.kazi.testapplication.R;
 import com.example.kazi.testapplication.model.AdapterRefresher;
-
 import com.example.kazi.testapplication.model.Titles;
 import com.example.kazi.testapplication.model.TabView;
-
 import com.example.kazi.testapplication.presenter.ApiPresenter;
+
 import com.squareup.picasso.Picasso;
 
 
@@ -107,12 +106,11 @@ public class ChampionsBinder implements ListBinder<ChampionsBinder.ChampionsHold
         mTabView.onDismissDialog();
         mTabView.onShowToastMessage(t.getMessage());
 
-
     }
 
 
     public class ChampionsHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-        Context context;
+
         private ImageView mChampionImage;
         private TextView mChampionFullName, mChampionWeightClass, mChampionInfo, mChampionStatus;
 

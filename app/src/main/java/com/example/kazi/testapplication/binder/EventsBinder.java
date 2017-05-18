@@ -12,7 +12,6 @@ import android.widget.TextView;
 import com.example.kazi.testapplication.R;
 import com.example.kazi.testapplication.model.AdapterRefresher;
 import com.example.kazi.testapplication.model.Events;
-
 import com.example.kazi.testapplication.model.TabView;
 import com.example.kazi.testapplication.presenter.ApiPresenter;
 import com.squareup.picasso.Picasso;
@@ -23,9 +22,7 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
 import rx.Observer;
-
 
 
 /**
@@ -60,6 +57,7 @@ public class EventsBinder implements ListBinder<EventsBinder.EventsHolder>, Call
         holder.mEventLocation.setText(String.format(events.getLocation()));
         holder.mEventArena.setText(String.format(events.getLocation()));
         Picasso.with(context).load(events.getFeatureImage()).into(holder.mEventImage);
+        holder.mEventDate.setText(String.format(events.getEventDate()));
 
     }
 
@@ -68,10 +66,14 @@ public class EventsBinder implements ListBinder<EventsBinder.EventsHolder>, Call
         return mEventsList.size();
     }
 
+
+
     @Override
     public void setAdapterRefresher(AdapterRefresher refresher) {
-
+        mRefresher = refresher;
     }
+
+
 
 
     @Override
@@ -105,7 +107,7 @@ public class EventsBinder implements ListBinder<EventsBinder.EventsHolder>, Call
 
     }
 
-    private void handleEventResponse(List<Events> body) {
+    private void handleEventResponse(List<Events> mEventsList) {
         mEventsList.clear();
         mEventsList.addAll(mEventsList);
         if (mRefresher != null) {
@@ -120,23 +122,27 @@ public class EventsBinder implements ListBinder<EventsBinder.EventsHolder>, Call
         mTabView.onShowToastMessage("Success");
     }
 
+
+
     @Override
     public void onFailure(Call<List<Events>> call, Throwable t) {
 
         mTabView.onDismissDialog();
         mTabView.onShowToastMessage(t.getMessage());
 
+
     }
 
     public class EventsHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private ImageView mEventImage;
-        private TextView mEventName, mEventLocation, mEventArena;
+        private TextView mEventName, mEventLocation, mEventArena,mEventDate;
 
         public EventsHolder(View itemView) {
             super(itemView);
 
             mEventImage = (ImageView) itemView.findViewById(R.id.imageViewEvent);
+            mEventDate = (TextView) itemView.findViewById(R.id.textViewInfo);
             mEventName = (TextView) itemView.findViewById(R.id.textViewEventName);
             mEventArena = (TextView) itemView.findViewById(R.id.textViewArena);
             mEventLocation = (TextView) itemView.findViewById(R.id.textViewLocation);
