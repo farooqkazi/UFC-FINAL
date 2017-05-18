@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_fighters"
+            android:icon="@mipmap/ic_launcher"
+            android:title="Fighters" />
+
+        <item
+            android:id="@+id/nav_news"
+            android:icon="@mipmap/ic_launcher"
+            android:title="News" />
+
+        <item
+            android:id="@+id/nav_events"
+            android:icon="@mipmap/ic_launcher"
+            android:title="Events" />
+
+        <item
+            android:id="@+id/nav_champions"
+            android:icon="@mipmap/ic_launcher"
+            android:title="Champions" />
+    </group>
+</menu>
