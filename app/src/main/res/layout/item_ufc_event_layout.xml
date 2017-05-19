@@ -16,7 +16,7 @@
 
         <ImageView
             android:id="@+id/imageViewEvent"
-            android:layout_width="100dp"
+            android:layout_width="130dp"
             android:layout_height="100dp"
             android:background="#CDC1B8"
             android:scaleType="fitXY" />
