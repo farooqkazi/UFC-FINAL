@@ -66,15 +66,10 @@ public class EventsBinder implements ListBinder<EventsBinder.EventsHolder>, Call
         return mEventsList.size();
     }
 
-
-
     @Override
     public void setAdapterRefresher(AdapterRefresher refresher) {
         mRefresher = refresher;
     }
-
-
-
 
     @Override
     public void execute(TabView tabView) {
@@ -129,7 +124,6 @@ public class EventsBinder implements ListBinder<EventsBinder.EventsHolder>, Call
 
         mTabView.onDismissDialog();
         mTabView.onShowToastMessage(t.getMessage());
-
 
     }
 
