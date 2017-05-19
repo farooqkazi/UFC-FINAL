@@ -26,11 +26,10 @@ import rx.Observer;
 
 
 /**
- * Created by Kazi on 5/11/2017.
+ * Created by Kazi on 5/14/2017.
  */
 
 public class EventsBinder implements ListBinder<EventsBinder.EventsHolder>, Callback<List<Events>> {
-
 
     public final ApiPresenter mApiPresenter;
     private final List<Events> mEventsList = new ArrayList<>();
@@ -43,8 +42,10 @@ public class EventsBinder implements ListBinder<EventsBinder.EventsHolder>, Call
 
     @Override
     public EventsHolder onCreateHolder(ViewGroup parent, int viewType) {
+
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_ufc_event_layout, parent, false);
         return new EventsHolder(view);
+
     }
 
     @Override
@@ -58,17 +59,11 @@ public class EventsBinder implements ListBinder<EventsBinder.EventsHolder>, Call
         holder.mEventArena.setText(String.format(events.getLocation()));
         Picasso.with(context).load(events.getFeatureImage()).into(holder.mEventImage);
         holder.mEventDate.setText(String.format(events.getEventDate()));
-
     }
 
     @Override
     public int getItemCount() {
         return mEventsList.size();
-    }
-
-    @Override
-    public void setAdapterRefresher(AdapterRefresher refresher) {
-        mRefresher = refresher;
     }
 
     @Override
@@ -92,7 +87,13 @@ public class EventsBinder implements ListBinder<EventsBinder.EventsHolder>, Call
                 handleEventResponse(events);
             }
         });
-       // mApiPresenter.getEvents(this);
+        // mApiPresenter.getEvents(this);
+    }
+
+    @Override
+    public void setAdapterRefresher(AdapterRefresher refresher) {
+        mRefresher = refresher;
+
     }
 
     @Override
@@ -103,9 +104,9 @@ public class EventsBinder implements ListBinder<EventsBinder.EventsHolder>, Call
 
     }
 
-    private void handleEventResponse(List<Events> mEventsList) {
+    private void handleEventResponse(List<Events> eventList) {
         mEventsList.clear();
-        mEventsList.addAll(mEventsList);
+        mEventsList.addAll(eventList);
         if (mRefresher != null) {
             mRefresher.refresh();
         }
@@ -118,8 +119,6 @@ public class EventsBinder implements ListBinder<EventsBinder.EventsHolder>, Call
         mTabView.onShowToastMessage("Success");
     }
 
-
-
     @Override
     public void onFailure(Call<List<Events>> call, Throwable t) {
 
@@ -128,14 +127,13 @@ public class EventsBinder implements ListBinder<EventsBinder.EventsHolder>, Call
 
     }
 
-    public class EventsHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class EventsHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         private ImageView mEventImage;
         private TextView mEventName, mEventLocation, mEventArena,mEventDate;
 
         public EventsHolder(View itemView) {
             super(itemView);
-
             mEventImage = (ImageView) itemView.findViewById(R.id.imageViewEvent);
             mEventDate = (TextView) itemView.findViewById(R.id.textViewInfo);
             mEventName = (TextView) itemView.findViewById(R.id.textViewEventName);
@@ -149,5 +147,4 @@ public class EventsBinder implements ListBinder<EventsBinder.EventsHolder>, Call
             mTabView.onShowToastMessage(String.format("You clicked on an item at position %d", getAdapterPosition()));
         }
     }
-
 }
