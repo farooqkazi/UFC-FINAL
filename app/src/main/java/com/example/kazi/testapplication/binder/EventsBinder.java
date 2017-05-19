@@ -84,6 +84,7 @@ public class EventsBinder implements ListBinder<EventsBinder.EventsHolder>, Call
             @Override
             public void onError(Throwable e) {
 
+                e.printStackTrace();
             }
 
             @Override
@@ -91,7 +92,7 @@ public class EventsBinder implements ListBinder<EventsBinder.EventsHolder>, Call
                 handleEventResponse(events);
             }
         });
-        //mApiPresenter.getEvents(this);
+       // mApiPresenter.getEvents(this);
     }
 
     @Override

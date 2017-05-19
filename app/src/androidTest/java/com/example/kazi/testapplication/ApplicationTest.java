@@ -1,6 +1,5 @@
 package com.example.kazi.testapplication;
 
-import android.app.ListActivity;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
@@ -21,7 +20,8 @@ import org.junit.runner.RunWith;
 public class ApplicationTest {
 
     @Rule
-    public ActivityTestRule<ListActivity> mActivityRule = new ActivityTestRule<>(ListActivity.class);
+    public ActivityTestRule<MainActivity> mActivityRule = new ActivityTestRule<>(
+            MainActivity.class);
 
     @Before
     public void setup() {

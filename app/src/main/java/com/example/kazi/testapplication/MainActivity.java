@@ -78,6 +78,8 @@ public class MainActivity extends BaseActivity {
                 supportInvalidateOptionsMenu();
             }
         };
+
+
         mDrawerToggle.setDrawerIndicatorEnabled(true);
         mDrawerLayout.addDrawerListener(mDrawerToggle);
         mDrawerToggle.syncState();
