@@ -4,22 +4,23 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_fighters"
-            android:icon="@mipmap/ic_launcher"
-            android:title="Fighters" />
+            android:icon="@drawable/ic_fighter"
+            android:title="Fighters"
+            />
 
         <item
             android:id="@+id/nav_news"
-            android:icon="@mipmap/ic_launcher"
+            android:icon="@drawable/ic_news"
             android:title="News" />
 
         <item
             android:id="@+id/nav_events"
-            android:icon="@mipmap/ic_launcher"
+            android:icon="@drawable/ic_events"
             android:title="Events" />
 
         <item
             android:id="@+id/nav_champions"
-            android:icon="@mipmap/ic_launcher"
+            android:icon="@drawable/ic_champions"
             android:title="Champions" />
     </group>
 </menu>
