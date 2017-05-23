@@ -40,6 +40,8 @@ public class UFCTabFragment extends BaseFragment implements TabView {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        setRetainInstance(true); // Screen Orientation
         mSwipeToRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {

@@ -1,6 +1,7 @@
 package com.example.kazi.testapplication.binder;
 
 import android.content.Context;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -59,7 +60,15 @@ public class NewsBinder implements ListBinder<NewsBinder.NewsHolder>, Callback<L
         if (thumbnail != null && !thumbnail.isEmpty()) {
             Picasso.with(context).load(thumbnail).into(holder.mNewsImage);
         }
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
     }
+
 
     @Override
     public int getItemCount() {
@@ -109,6 +118,7 @@ public class NewsBinder implements ListBinder<NewsBinder.NewsHolder>, Callback<L
         private final TextView mNewsBy;
         private final TextView mNewsDate;
 
+
         public NewsHolder(View itemView) {
             super(itemView);
             mNewsImage = (ImageView) itemView.findViewById(R.id.imageViewUFC_News);
@@ -116,6 +126,8 @@ public class NewsBinder implements ListBinder<NewsBinder.NewsHolder>, Callback<L
             mNewsBy = (TextView) itemView.findViewById(R.id.textViewBy);
             mNewsDate = (TextView) itemView.findViewById(R.id.textViewModified);
             itemView.setOnClickListener(this);
+
+
         }
 
         @Override

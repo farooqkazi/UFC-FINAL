@@ -19,6 +19,7 @@ import com.example.kazi.testapplication.presenter.ApiPresenterImpl;
 import com.example.kazi.testapplication.ui.UFCTabFragment;
 
 import butterknife.BindView;
+import io.realm.Realm;
 
 public class MainActivity extends BaseActivity {
 
@@ -34,6 +35,7 @@ public class MainActivity extends BaseActivity {
 
         setTitle("UFC APP");
         showBurgerMenu();
+        //Realm.init(this);
 
         mNavigationView.setItemIconTintList(null);
         mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
