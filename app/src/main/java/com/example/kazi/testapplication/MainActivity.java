@@ -7,6 +7,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -17,6 +18,7 @@ import com.example.kazi.testapplication.factory.UFCBinderFactory;
 import com.example.kazi.testapplication.model.AppConstants;
 import com.example.kazi.testapplication.presenter.ApiPresenterImpl;
 import com.example.kazi.testapplication.ui.UFCTabFragment;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import butterknife.BindView;
 import io.realm.Realm;
@@ -28,10 +30,21 @@ public class MainActivity extends BaseActivity {
 
     private ActionBarDrawerToggle mDrawerToggle;
     private BinderFactory mBinderFactory;
+    private static final String TAG = "MainActivity";
 
     @Override
     protected void onActivityCreated(Bundle savedInstanceState, Intent intent) {
         super.onActivityCreated(savedInstanceState,intent);
+
+        FirebaseMessaging.getInstance().subscribeToTopic("News");
+
+        if (getIntent().getExtras() != null) {
+            for (String key : getIntent().getExtras().keySet()) {
+                String value = getIntent().getExtras().getString(key);
+                Log.d(TAG, "Key: " + key + " Value: " + value);
+            }
+        }
+
 
         setTitle("UFC APP");
         showBurgerMenu();
