@@ -19,6 +19,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -52,7 +53,7 @@ public class FighterBinder implements ListBinder<FighterBinder.FighterHolder>, C
 
         Fighters fighters = mFightersList.get(position);
 
-        holder.mFighterFullName.setText(String.format(fighters.getFirst_name() +" "+ fighters.getLast_name()));
+        holder.mFighterFullName.setText(String.format(Locale.UK,fighters.getFirst_name() +" "+ fighters.getLast_name()));
         holder.mFighterWeightClass.setText(String.format(fighters.getWeight_class()));
         holder.mFighterFighterInfo.setText(String.format("Rank: "+ fighters.getRank() + ", Nickname: " + fighters.getNickname()));
         Picasso.with(context).load(fighters.getProfile_image()).into(holder.mFighterImage);

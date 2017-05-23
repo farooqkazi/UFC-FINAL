@@ -55,10 +55,10 @@ public class EventsBinder implements ListBinder<EventsBinder.EventsHolder>, Call
         Events events = mEventsList.get(position);
 
         holder.mEventName.setText(String.format(events.getTitleTagLine()));
-        holder.mEventLocation.setText(String.format(events.getLocation()));
-        holder.mEventArena.setText(String.format(events.getArena()));
+        holder.mEventLocation.setText(String.format("Location: " + events.getLocation()));
+        holder.mEventArena.setText(String.format("Arena: " + events.getArena()));
         Picasso.with(context).load(events.getSecondaryFeatureImage()).into(holder.mEventImage);
-        holder.mEventDate.setText(String.format(events.getEventDategmt()));
+        holder.mEventDate.setText(String.format("Event Date: " +events.getEventDategmt()));
     }
 
     @Override
