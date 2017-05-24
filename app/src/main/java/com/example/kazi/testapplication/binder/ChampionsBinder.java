@@ -107,6 +107,8 @@ public class ChampionsBinder implements ListBinder<ChampionsBinder.ChampionsHold
     }
 
 
+
+
     public class ChampionsHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         private ImageView mChampionImage;
