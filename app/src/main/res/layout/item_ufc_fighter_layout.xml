@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:foreground="?android:attr/selectableItemBackground"
-    app:cardBackgroundColor="@color/white"
+    app:cardBackgroundColor="@color/colorPrimary"
     app:cardCornerRadius="0dp"
     app:cardElevation="2dp"
     app:cardUseCompatPadding="false">
@@ -31,7 +31,7 @@
                 android:id="@+id/textViewFullName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
+                android:textColor="@color/red"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -39,15 +39,15 @@
                 android:id="@+id/textViewWeightClass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:textSize="14sp" />
+                android:textColor="@color/white"
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/textViewFighterInfo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:textSize="13sp" />
+                android:textColor="@color/white"
+                android:textSize="15sp" />
 
         </LinearLayout>
     </LinearLayout>

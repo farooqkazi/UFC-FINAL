@@ -14,6 +14,7 @@ import com.example.kazi.testapplication.model.AdapterRefresher;
 import com.example.kazi.testapplication.model.Fighters;
 import com.example.kazi.testapplication.model.TabView;
 import com.example.kazi.testapplication.presenter.ApiPresenter;
+import com.example.kazi.testapplication.ui.UFCTabDetailFragment;
 import com.squareup.picasso.Picasso;
 
 
@@ -53,9 +54,12 @@ public class FighterBinder implements ListBinder<FighterBinder.FighterHolder>, C
 
         Fighters fighters = mFightersList.get(position);
 
-        holder.mFighterFullName.setText(String.format(Locale.UK,fighters.getFirst_name() +" "+ fighters.getLast_name()));
+        holder.mFighterFullName.setText(String.format(fighters.getFirst_name() +" "+ fighters.getLast_name()));
         holder.mFighterWeightClass.setText(String.format(fighters.getWeight_class()));
-        holder.mFighterFighterInfo.setText(String.format("Rank: "+ fighters.getRank() + ", Nickname: " + fighters.getNickname()));
+        String nickname = fighters.getNickname();
+        String rank = fighters.getRank();
+        holder.mFighterFighterInfo.setText(String.format("Rank: %s" + ", Nickname: %s", (rank == null ? "N/A" : rank),
+                (nickname == null ? "Undefined" : nickname)));
         Picasso.with(context).load(fighters.getProfile_image()).into(holder.mFighterImage);
     }
 
@@ -89,8 +93,10 @@ public class FighterBinder implements ListBinder<FighterBinder.FighterHolder>, C
                 Fighters fighters = mFightersList.get(i);
                 Log.d("TAG", fighters.toString());
             }
-            mTabView.onDismissDialog();
-            mTabView.onShowToastMessage("Success");
+            if (mTabView != null) {
+                mTabView.onDismissDialog();
+                mTabView.onShowToastMessage("Success");
+            }
         }
     }
 

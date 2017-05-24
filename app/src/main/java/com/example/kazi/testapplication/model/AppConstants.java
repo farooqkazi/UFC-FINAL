@@ -22,4 +22,5 @@ public interface AppConstants {
     String TAB_TAG_TWO = "TAB_TWO";
     String TAB_TAG_THREE = "TAB_THREE";
     String TAB_TAG_FOUR = "TAB_FOUR";
+    String KEY_NEWS_ID = "NEWS_ID";
 }

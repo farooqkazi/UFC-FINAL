@@ -7,7 +7,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-
 import com.example.kazi.testapplication.R;
 import com.example.kazi.testapplication.base.BaseFragment;
 import com.example.kazi.testapplication.base.BaseListAdapter;
@@ -75,5 +74,4 @@ public class UFCTabFragment extends BaseFragment implements TabView {
         hideDialog();
         mSwipeToRefresh.setRefreshing(false);
     }
-
 }

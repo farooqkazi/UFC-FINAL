@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.kazi.testapplication.R;
+
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 

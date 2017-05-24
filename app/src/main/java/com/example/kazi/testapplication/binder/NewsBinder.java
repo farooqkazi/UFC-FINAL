@@ -1,7 +1,7 @@
 package com.example.kazi.testapplication.binder;
 
 import android.content.Context;
-import android.support.v7.widget.CardView;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -10,14 +10,14 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.kazi.testapplication.NewsDetailActivity;
 import com.example.kazi.testapplication.R;
 import com.example.kazi.testapplication.model.AdapterRefresher;
+import com.example.kazi.testapplication.model.AppConstants;
 import com.example.kazi.testapplication.model.News;
 import com.example.kazi.testapplication.model.TabView;
 import com.example.kazi.testapplication.presenter.ApiPresenter;
-
 import com.squareup.picasso.Picasso;
-
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,15 +60,7 @@ public class NewsBinder implements ListBinder<NewsBinder.NewsHolder>, Callback<L
         if (thumbnail != null && !thumbnail.isEmpty()) {
             Picasso.with(context).load(thumbnail).into(holder.mNewsImage);
         }
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
     }
-
 
     @Override
     public int getItemCount() {
@@ -126,13 +118,15 @@ public class NewsBinder implements ListBinder<NewsBinder.NewsHolder>, Callback<L
             mNewsBy = (TextView) itemView.findViewById(R.id.textViewBy);
             mNewsDate = (TextView) itemView.findViewById(R.id.textViewModified);
             itemView.setOnClickListener(this);
-
-
         }
 
         @Override
         public void onClick(View v) {
-            mTabView.onShowToastMessage(String.format("You clicked on an item at position %d", getAdapterPosition()));
+            News news = mNewsList.get(getAdapterPosition());
+            Context context = v.getContext();
+            Intent intent = new Intent(context, NewsDetailActivity.class);
+            intent.putExtra(AppConstants.KEY_NEWS_ID, news.getId());
+            context.startActivity(intent);
         }
     }
 }

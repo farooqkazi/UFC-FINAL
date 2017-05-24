@@ -25,10 +25,11 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="start"
-            android:background="@color/white"
+            android:background="@color/gray"
             app:headerLayout="@layout/drawer_header"
-            app:itemTextColor="@color/black"
-            app:menu="@menu/navigation_menu" />
+            app:itemTextColor="@color/red"
+            app:menu="@menu/navigation_menu"
+            app:theme="@style/NavigationViewStyle"/>
 
     </android.support.v4.widget.DrawerLayout>
 </LinearLayout>

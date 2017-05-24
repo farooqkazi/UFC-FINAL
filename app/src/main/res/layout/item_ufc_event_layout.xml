@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:foreground="?android:attr/selectableItemBackground"
-    app:cardBackgroundColor="@color/white"
+    app:cardBackgroundColor="@color/colorPrimary"
     app:cardCornerRadius="0dp"
     app:cardElevation="2dp"
     app:cardUseCompatPadding="false">
@@ -31,30 +31,30 @@
                 android:id="@+id/textViewEventName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:textSize="16sp"
+                android:textColor="@color/red"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textViewLocation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:textSize="14sp" />
+                android:textColor="@color/white"
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/textViewArena"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:textSize="13sp" />
+                android:textColor="@color/white"
+                android:textSize="15sp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textViewInfo"
-                android:textColor="@color/black"
-                android:textSize="13sp"/>
+                android:textColor="@color/white"
+                android:textSize="15sp"/>
 
 
         </LinearLayout>

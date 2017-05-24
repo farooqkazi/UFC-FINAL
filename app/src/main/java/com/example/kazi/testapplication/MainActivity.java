@@ -1,6 +1,9 @@
 package com.example.kazi.testapplication;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -21,7 +24,6 @@ import com.example.kazi.testapplication.ui.UFCTabFragment;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 import butterknife.BindView;
-import io.realm.Realm;
 
 public class MainActivity extends BaseActivity {
 
@@ -46,8 +48,8 @@ public class MainActivity extends BaseActivity {
         }
 
 
-        setTitle("UFC APP");
-        showBurgerMenu();
+        setTitle("UFC UNOFFICIAL");
+        showHome();
         //Realm.init(this);
 
         mNavigationView.setItemIconTintList(null);
@@ -120,4 +122,5 @@ public class MainActivity extends BaseActivity {
     protected int getContentView() {
         return R.layout.activity_main;
     }
+
 }

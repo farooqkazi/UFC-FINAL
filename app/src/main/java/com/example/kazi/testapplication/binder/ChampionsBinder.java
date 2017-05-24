@@ -65,7 +65,6 @@ public class ChampionsBinder implements ListBinder<ChampionsBinder.ChampionsHold
     @Override
     public int getItemCount() {
         return mTitlesList.size();
-
     }
 
     @Override
@@ -73,7 +72,6 @@ public class ChampionsBinder implements ListBinder<ChampionsBinder.ChampionsHold
         mTabView = tabView;
         tabView.onShowDialog("Loading Champions....");
         mApiPresenter.getTitles(this);
-
     }
 
     @Override

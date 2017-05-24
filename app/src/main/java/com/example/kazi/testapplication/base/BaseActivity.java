@@ -1,8 +1,11 @@
 package com.example.kazi.testapplication.base;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.annotation.CallSuper;
 
@@ -90,7 +93,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
     }
 
-    protected void showBurgerMenu() {
+    protected void showHome() {
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
@@ -107,4 +110,5 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void showToast(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
+
 }
